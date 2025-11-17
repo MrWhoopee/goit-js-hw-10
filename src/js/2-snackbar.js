@@ -1,5 +1,8 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import errorUrl from '../img/error.svg';
+import warningUrl from '../img/caution.svg';
+import successUrl from '../img/success.svg';
 
 const refs = {
   snackbarFormEl: document.querySelector('form'),
@@ -21,7 +24,7 @@ function submitSnackbarForm(e) {
       titleColor: '#fff',
       messageColor: '#fff',
       progressBarColor: '#bb7b10',
-      iconUrl: './img/caution.svg',
+      iconUrl: warningUrl,
       close: true,
       class: 'my-toast',
     });
@@ -44,7 +47,7 @@ function submitSnackbarForm(e) {
         titleColor: '#fff',
         messageColor: '#fff',
         progressBarColor: '#326101',
-        iconUrl: './img/success.svg',
+        iconUrl: successUrl,
         close: true,
         class: 'my-toast',
       });
@@ -58,7 +61,7 @@ function submitSnackbarForm(e) {
         titleColor: '#fff',
         messageColor: '#fff',
         progressBarColor: '#b51b1b',
-        iconUrl: './img/error.svg',
+        iconUrl: errorUrl,
         close: true,
         class: 'my-toast',
       });

@@ -2,6 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import errorUrl from '../img/error.svg';
 
 const refs = {
   startBtn: document.querySelector('[data-start]'),
@@ -64,7 +65,7 @@ const options = {
         // theme: 'dark',
         // timeout: 3000,
         progressBarColor: '#b51b1b',
-        iconUrl: './img/error.svg',
+        iconUrl: errorUrl,
         close: true,
         class: 'my-toast',
       });
