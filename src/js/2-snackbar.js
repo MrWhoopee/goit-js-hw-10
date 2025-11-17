@@ -37,34 +37,38 @@ function submitSnackbarForm(e) {
     } else {
       reject(`Rejected promise in ${delay}ms`);
     }
-  })
+  }, delay)
     .then(msg => {
-      iziToast.success({
-        title: 'OK',
-        message: msg,
-        position: 'topRight',
-        backgroundColor: '#59a10d',
-        titleColor: '#fff',
-        messageColor: '#fff',
-        progressBarColor: '#326101',
-        iconUrl: successUrl,
-        close: true,
-        class: 'my-toast',
-      });
+      setTimeout(() => {
+        iziToast.success({
+          title: 'OK',
+          message: msg,
+          position: 'topRight',
+          backgroundColor: '#59a10d',
+          titleColor: '#fff',
+          messageColor: '#fff',
+          progressBarColor: '#326101',
+          iconUrl: successUrl,
+          close: true,
+          class: 'my-toast',
+        });
+      }, delay);
     })
     .catch(msg => {
-      iziToast.error({
-        title: 'Error',
-        message: msg,
-        position: 'topRight',
-        backgroundColor: '#ef4040',
-        titleColor: '#fff',
-        messageColor: '#fff',
-        progressBarColor: '#b51b1b',
-        iconUrl: errorUrl,
-        close: true,
-        class: 'my-toast',
-      });
+      setTimeout(() => {
+        iziToast.error({
+          title: 'Error',
+          message: msg,
+          position: 'topRight',
+          backgroundColor: '#ef4040',
+          titleColor: '#fff',
+          messageColor: '#fff',
+          progressBarColor: '#b51b1b',
+          iconUrl: errorUrl,
+          close: true,
+          class: 'my-toast',
+        });
+      }, delay);
     });
 }
 
