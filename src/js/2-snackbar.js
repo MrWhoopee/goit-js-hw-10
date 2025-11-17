@@ -18,7 +18,7 @@ function submitSnackbarForm(e) {
   if (delay < 0) {
     return iziToast.warning({
       title: 'Caution',
-      message: 'Please dont negative values',
+      message: 'Please dont input negative values',
       position: 'topRight',
       backgroundColor: '#ffa000',
       titleColor: '#fff',
