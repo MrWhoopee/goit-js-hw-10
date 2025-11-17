@@ -21,7 +21,7 @@ function submitSnackbarForm(e) {
       titleColor: '#fff',
       messageColor: '#fff',
       progressBarColor: '#bb7b10',
-      iconUrl: '../img/caution.svg',
+      iconUrl: './img/caution.svg',
       close: true,
       class: 'my-toast',
     });
@@ -44,7 +44,7 @@ function submitSnackbarForm(e) {
         titleColor: '#fff',
         messageColor: '#fff',
         progressBarColor: '#326101',
-        iconUrl: '../img/success.svg',
+        iconUrl: './img/success.svg',
         close: true,
         class: 'my-toast',
       });
@@ -58,7 +58,7 @@ function submitSnackbarForm(e) {
         titleColor: '#fff',
         messageColor: '#fff',
         progressBarColor: '#b51b1b',
-        iconUrl: '../img/error.svg',
+        iconUrl: './img/error.svg',
         close: true,
         class: 'my-toast',
       });
