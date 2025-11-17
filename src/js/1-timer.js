@@ -64,7 +64,7 @@ const options = {
         // theme: 'dark',
         // timeout: 3000,
         progressBarColor: '#b51b1b',
-        iconUrl: '../img/error.svg',
+        iconUrl: './img/error.svg',
         close: true,
         class: 'my-toast',
       });
