@@ -39,7 +39,7 @@ function convertMs(ms) {
 
 // UpdateTimer in page
 function updateTimer({ days, hours, minutes, seconds }) {
-  refs.dayEl.textContent = days;
+  refs.dayEl.textContent = addLeadingZero(days);
   refs.hourEl.textContent = addLeadingZero(hours);
   refs.minuteEl.textContent = addLeadingZero(minutes);
   refs.secondEl.textContent = addLeadingZero(seconds);
@@ -58,7 +58,17 @@ const options = {
         title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
+        backgroundColor: '#ef4040',
+        titleColor: '#fff',
+        messageColor: '#fff',
+        // theme: 'dark',
+        // timeout: 3000,
+        progressBarColor: '#b51b1b',
+        iconUrl: '../img/error.svg',
+        close: true,
+        class: 'my-toast',
       });
+
       refs.startBtn.disabled = true;
       return;
     }
@@ -82,7 +92,7 @@ function onStartTimerClick() {
     if (diff <= 0) {
       clearInterval(timerId);
       updateTimer({
-        days: 0,
+        days: addLeadingZero(0),
         hours: 0,
         minutes: 0,
         seconds: 0,
