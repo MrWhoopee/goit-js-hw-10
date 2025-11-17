@@ -22,19 +22,39 @@
         <load src="./partials/back-link.html" />
       </div>
       <form class="form">
-        <label>
+        <label class="snackbar-label">
           Delay (ms)
           <input type="number" name="delay" required />
         </label>
 
         <fieldset>
           <legend>State</legend>
-          <label>
-            <input type="radio" name="state" value="fulfilled" required />
+
+          <label class="radio-option">
+            <input
+              class="snackbar-checkbox visually-hidden"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            <span class="custom-checkbox">
+              <span class="checkbox-span"></span>
+            </span>
             Fulfilled
           </label>
-          <label>
-            <input type="radio" name="state" value="rejected" required />
+
+          <label class="radio-option">
+            <input
+              class="snackbar-checkbox visually-hidden"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            <span class="custom-checkbox">
+              <span class="checkbox-span"></span>
+            </span>
             Rejected
           </label>
         </fieldset>
@@ -44,5 +64,6 @@
     </main>
 
     <load src="./partials/footer.html" />
+    <script type="module" src="./js/2-snackbar.js"></script>
   </body>
 </html>

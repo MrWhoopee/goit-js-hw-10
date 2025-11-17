@@ -1,0 +1,76 @@
+fieldset {
+  max-width: 360px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  padding-top: 24px;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: black;
+  }
+}
+
+.snackbar-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-top: 24px;
+}
+
+legend {
+  width: auto;
+  padding: 0 8px;
+  margin-left: -140px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.snackbar-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.25s;
+}
+
+.checkbox-span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.25s;
+}
+
+.snackbar-checkbox:checked + .custom-checkbox {
+  border-color: #4e75ff;
+}
+
+.snackbar-checkbox:checked + .custom-checkbox .checkbox-span {
+  background-color: #4e75ff;
+}
