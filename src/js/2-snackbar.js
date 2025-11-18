@@ -18,7 +18,7 @@ function submitSnackbarForm(e) {
   if (delay < 0) {
     return iziToast.warning({
       title: 'Caution',
-      message: 'Please dont input negative values',
+      message: 'This does not make sense',
       position: 'topRight',
       backgroundColor: '#ffa000',
       titleColor: '#fff',
@@ -31,44 +31,44 @@ function submitSnackbarForm(e) {
   }
 
   return new Promise((resolve, reject) => {
-    if (state === 'fulfilled') {
-      resolve(`Fulfilled promise in ${delay}ms`);
-      return;
-    } else {
-      reject(`Rejected promise in ${delay}ms`);
-    }
-  }, delay)
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        console.log('yep');
+        resolve(`Fulfilled promise in ${delay}ms`);
+        return;
+      } else {
+        console.log('nope');
+        reject(`Rejected promise in ${delay}ms`);
+      }
+    }, delay);
+  })
     .then(msg => {
-      setTimeout(() => {
-        iziToast.success({
-          title: 'OK',
-          message: msg,
-          position: 'topRight',
-          backgroundColor: '#59a10d',
-          titleColor: '#fff',
-          messageColor: '#fff',
-          progressBarColor: '#326101',
-          iconUrl: successUrl,
-          close: true,
-          class: 'my-toast',
-        });
-      }, delay);
+      iziToast.success({
+        title: 'OK',
+        message: msg,
+        position: 'topRight',
+        backgroundColor: '#59a10d',
+        titleColor: '#fff',
+        messageColor: '#fff',
+        progressBarColor: '#326101',
+        iconUrl: successUrl,
+        close: true,
+        class: 'my-toast',
+      });
     })
     .catch(msg => {
-      setTimeout(() => {
-        iziToast.error({
-          title: 'Error',
-          message: msg,
-          position: 'topRight',
-          backgroundColor: '#ef4040',
-          titleColor: '#fff',
-          messageColor: '#fff',
-          progressBarColor: '#b51b1b',
-          iconUrl: errorUrl,
-          close: true,
-          class: 'my-toast',
-        });
-      }, delay);
+      iziToast.error({
+        title: 'Error',
+        message: msg,
+        position: 'topRight',
+        backgroundColor: '#ef4040',
+        titleColor: '#fff',
+        messageColor: '#fff',
+        progressBarColor: '#b51b1b',
+        iconUrl: errorUrl,
+        close: true,
+        class: 'my-toast',
+      });
     });
 }
 
