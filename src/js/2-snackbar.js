@@ -12,7 +12,7 @@ function submitSnackbarForm(e) {
   e.preventDefault();
 
   const form = e.currentTarget;
-  const delay = Number(form.elements.delay.value * 1000);
+  const delay = Number(form.elements.delay.value);
   const state = form.elements.state.value;
 
   if (delay < 0) {
